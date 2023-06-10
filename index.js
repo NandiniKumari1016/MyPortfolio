@@ -103,7 +103,14 @@ const mobile_nav = document.querySelector(".mobile-navbar-btn");
 const headerElem = document.querySelector(".header");
 
 mobile_nav.addEventListener('click' , () =>{
-  headerElem.classList.toggle("active");
+  // headerElem.classList.toggle("active");
+  if(headerElem.classList.contains("active"))
+  headerElem.classList.remove("active");
+  else{
+  headerElem.classList.add("active");
+  }
+
+
 })
 
 // toggle is a method which first add and second remove the class

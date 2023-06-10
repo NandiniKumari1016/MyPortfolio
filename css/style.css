@@ -75,11 +75,16 @@ li{
 .header{
     padding: 0 4.8rem;
     height: 8rem;
-    background:darkslateblue;
+    background:var(--helper);
     display:flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
 }
+
+/* .header.sticky{
+background:var(--helper) ;
+} */
 
 /* .header.logo{
     
@@ -153,7 +158,7 @@ li{
 }
 
  .btn{
-    background-color:plum;
+    background-color:var(--helper);
     padding: 1.6rem 3.2rem;
     border: none;
     color: var(--black);
@@ -162,6 +167,7 @@ li{
     font-size: 1.8rem;
     font-weight: 500;
     cursor: pointer;
+    border-radius: 5px;
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
@@ -179,6 +185,13 @@ li{
     margin-bottom: 6rem;
     text-transform: capitalize;
     position: relative;
+}
+
+@media(max-width:500px){
+    .common-heading{
+        font-size: 3.8rem;
+    }
+    
 }
 
 /* this code is used for creating style down common-heading */
@@ -203,6 +216,17 @@ li{
     background-color:darkred;
 }
 
+@media(max-width:560px){
+    .common-heading::before{
+        left:-5px;
+        width: 12px;
+        height: 12px;
+    }
+    .common-heading::after{
+        min-width: 15rem;
+        left:2px;
+    }
+}
 
 
 
@@ -221,7 +245,7 @@ li{
 .hero-image{
   max-width: 70%;
   height: 50rem;
-  width: 50rem;
+  width: 40rem;
   border-radius: 7px;
   margin-top: 6%;
   /* box-shadow: 15px 20px; */
@@ -392,6 +416,11 @@ li{
     gap: 3.2rem;
     margin-left: 5%;
 }
+@media(max-width:560px){
+    .portfolio-images{
+        margin-left: 12%;
+    }
+}
 
 .portfolio-images img{
    width: 85%; 
@@ -435,7 +464,7 @@ li{
 }
 
 .p-btn-active{
-    transform: translateY(-1rem);
+    transform: translateY(-5px);
 }
 
 .p-image-not-active{
@@ -477,6 +506,15 @@ background-color:rgba(173, 216, 230, 0.421);
     column-gap: 8rem;
     margin-left: 10rem;
     margin-right: 10rem;
+
+}
+
+@media(max-width:500px){
+    .section-services .grid{
+        margin-top: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
 
 }
 
@@ -574,6 +612,16 @@ background-color:rgba(173, 216, 230, 0.421);
     text-align: left;
     box-sizing: var(--shadow);
     position: relative;
+  }
+
+  @media(max-width:560px){
+    .msg{
+        line-height: 1.3 !important;
+
+    }
+    .swiper-client-msg{
+        padding: 5rem;
+    }
   }
 
   .swiper-client-msg::before{
@@ -770,6 +818,12 @@ background-color:rgba(173, 216, 230, 0.421);
     color: var(--footer-text);
 }
 
+@media(max-width:560px){
+    .f-credits p{
+        padding: 1.5rem;
+    }
+}
+
 .f-links a:hover, .f-links a:active, .f-services a:hover, .f-services a:active , .f-address a:hover, .f-address a:active {
  color: var(--contactus);
 }
@@ -829,7 +883,7 @@ background-color:rgba(173, 216, 230, 0.421);
         font-size: 50%;
     }
         
-    
+    /* for mobile  */
 
     .mobile-navbar-btn{
         display: block;
@@ -895,6 +949,7 @@ background-color:rgba(173, 216, 230, 0.421);
     /* hero section */
     .section-hero h1{
         line-height: 1.05;
+        font-size: 5rem;
     }
 
     /* services section */
@@ -934,7 +989,7 @@ background-color:rgba(173, 216, 230, 0.421);
     }
 
     .section-hero img{
-        width: 70%;
+        height:40rem;
     }
 
     /* bio data */
@@ -946,12 +1001,12 @@ background-color:rgba(173, 216, 230, 0.421);
     margin-top: 3.2rem;
    }
    .section-biodata .bio-image img{
-    width: 50%;
+    width: 80%;
    }
 
    /* portfolio section */
 .section-portfolio .grid-three-column{
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 1fr;
 }
 
 /* word data */
@@ -973,7 +1028,7 @@ background-color:rgba(173, 216, 230, 0.421);
     }
     /* portfolio */
     .p-btns{
-        gap:2.8rem;
+        gap:7px;
     }
 
     .btn{
@@ -1000,7 +1055,7 @@ background-color:rgba(173, 216, 230, 0.421);
         grid-template-columns: 1fr;
     }
     .section-contact-main input[type="submit"]{
-        max-width: 40%;
+        max-width: 45%;
     }
     /* footer section  */
     .section-footer .f-about,
