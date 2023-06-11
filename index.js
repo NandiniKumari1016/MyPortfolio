@@ -103,12 +103,8 @@ const mobile_nav = document.querySelector(".mobile-navbar-btn");
 const headerElem = document.querySelector(".header");
 
 mobile_nav.addEventListener('click' , () =>{
-  // headerElem.classList.toggle("active");
-  if(headerElem.classList.contains("active"))
-  headerElem.classList.remove("active");
-  else{
-  headerElem.classList.add("active");
-  }
+  headerElem.classList.toggle("active");
+  
 
 
 })
@@ -195,3 +191,20 @@ workObserver.observe(workSection);
 myJsmedia(widthSize);
 // attach listener function on state change
 widthSize.addEventListener("change" , myJsmedia);
+
+// add animation on scrolling
+
+window.addEventListener("scroll",animate);
+
+function animate(){
+  var animates = document.querySelectorAll(".animate");
+  for(var i=0 ; i<animates.length ; i++){
+    var windowHeight = window.innerHeight
+    var animateTop = animates[i].getBoundingClientRect().top;
+    var animatePoint = 50;
+
+    if(animateTop < windowHeight - animatePoint)
+    animates[i].classList.add("active");
+  }
+}
+
