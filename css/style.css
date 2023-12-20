@@ -414,23 +414,21 @@ background:var(--helper) ;
 
 .portfolio-images{
     gap: 3.2rem;
-    margin-left: 5%;
-}
-@media(max-width:560px){
-    .portfolio-images{
-        margin-left: 12%;
-    }
 }
 
 .portfolio-images img{
-   width: 85%; 
-  border-radius: 7px;
-  position: relative;
-  overflow: hidden;
+    width: 85%;
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
  
 }
 
-.img-overlay{
+.img-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* fixed center img alignment */
     position: relative;
     overflow: hidden;
 }
